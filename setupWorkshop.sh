@@ -156,7 +156,7 @@ sudo chown -R ec2-user:ec2-user /opt/appdynamics
 
 cd /opt/appdynamics
 
-git clone https://github.com/Appdynamics/appd_aws_observability_lab.git appd_lab_repo
+git clone https://github.com/james201010/appd_jrs_observability_lab.git appd_lab_repo
 
 
 ##### Prep Lab User Assets 
