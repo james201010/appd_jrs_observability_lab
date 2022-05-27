@@ -18,8 +18,8 @@ taskExecutionOrder:
     taskName: "expand-disk-volume"
   - taskType: "SHELL_TASK"
     taskName: "workshop-prereqs-sh"
-  - taskType: "CONTROLLER_INIT_TASKS"
-    taskName: ""
+#  - taskType: "CONTROLLER_INIT_TASKS"
+#    taskName: ""
   - taskType: "SHELL_TASK"
     taskName: "deploy-db-agent"
   - taskType: "SHELL_TASK"
@@ -334,8 +334,8 @@ controllerInitTasks:
       - tagKey: "@[ADWRKSHP_IBL_LICENSE_RULE_NBR_ENTR]"
         tagValue: "0"
       - tagKey: "@[ADWRKSHP_IBL_LICENSE_RULE_NBR_PREM]"
-        tagValue: "40"
-        # could be reduced to 30 but need to test this
+        tagValue: "50"
+        
 
 # !!! The license rule creation task should be the very first controller init task
 #  - taskType: "CONTROLLER_TASK_CREATE_LICENSE_RULE"
@@ -694,17 +694,17 @@ cloudTasks:
 
 
 
-vaultInfo:
-  vaultHost: 
-  validateSsl: false
-  authStr: 
-  uriPaths:
-    - name: auth
-      value: /v1/auth/userpass/login/cloud-team
-    - name: controller-info
-      value: /v1/kv/cloud-labs/controller-info
-    - name: controller-login-info
-      value: /v1/kv/cloud-labs/controller-login-info
-    - name: dbagent-s3-auth
-      value: /v1/kv/cloud-labs/dbagent-s3-auth
+#vaultInfo:
+#  vaultHost: 
+#  validateSsl: false
+#  authStr: 
+#  uriPaths:
+#    - name: auth
+#      value: /v1/auth/userpass/login/cloud-team
+#    - name: controller-info
+#      value: /v1/kv/cloud-labs/controller-info
+#    - name: controller-login-info
+#      value: /v1/kv/cloud-labs/controller-login-info
+#    - name: dbagent-s3-auth
+#      value: /v1/kv/cloud-labs/dbagent-s3-auth
       

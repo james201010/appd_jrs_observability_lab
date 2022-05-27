@@ -101,7 +101,7 @@ if [ -f "/home/ec2-user/appd_workshop_setup.txt" ]; then
 
   appd_wrkshp_last_setupstep_done=$(cat /home/ec2-user/appd_workshop_setup.txt)
 
-  java -DworkshopUtilsConf=/opt/appdynamics/appd_lab_repo/scripts/workshop-setup.yaml -DworkshopLabUserPrefix=${appd_workshop_user} -DworkshopAction=setup -DlastSetupStepDone=${appd_wrkshp_last_setupstep_done} -DshowWorkshopBanner=false -jar /opt/appdynamics/appd_lab_repo/scripts/AD-Workshop-Utils.jar
+  java -DworkshopUtilsConf=/opt/appdynamics/appd_lab_repo/scripts/workshop-setup.yaml -DcontrollerConf=/home/ec2-user/environment/controller-config.yaml -DcreateRbacUserNRole=false -DworkshopLabUserPrefix=${appd_workshop_user} -DworkshopAction=setup -DlastSetupStepDone=${appd_wrkshp_last_setupstep_done} -DshowWorkshopBanner=false -jar /opt/appdynamics/appd_lab_repo/scripts/AD-Workshop-Utils.jar
 
 else
 
@@ -246,7 +246,7 @@ chmod 777 /opt/appdynamics/workshopuser/workshopPrereqs.sh
 
 #set -x  # temporarily turn command display OFF.
 
-curl --silent -L https://raw.githubusercontent.com/Appdynamics/appd_aws_observability_lab/main/teardownWorkshop.sh -o /home/ec2-user/environment/teardownWorkshop.sh
+curl --silent -L https://raw.githubusercontent.com/james201010/appd_jrs_observability_lab/main/teardownWorkshop.sh -o /home/ec2-user/environment/teardownWorkshop.sh
 
 chmod 777 /home/ec2-user/environment/teardownWorkshop.sh
 
@@ -277,7 +277,7 @@ appd_wrkshp_last_setupstep_done="100"
 
 echo "$appd_wrkshp_last_setupstep_done" > /home/ec2-user/appd_workshop_setup.txt
 
-java -DworkshopUtilsConf=/opt/appdynamics/appd_lab_repo/scripts/workshop-setup.yaml -DworkshopLabUserPrefix=${appd_workshop_user} -DworkshopAction=setup -DlastSetupStepDone=${appd_wrkshp_last_setupstep_done} -DshowWorkshopBanner=false -jar /opt/appdynamics/appd_lab_repo/scripts/AD-Workshop-Utils.jar
+java -DworkshopUtilsConf=/opt/appdynamics/appd_lab_repo/scripts/workshop-setup.yaml -DcontrollerConf=/home/ec2-user/environment/controller-config.yaml -DcreateRbacUserNRole=false -DworkshopLabUserPrefix=${appd_workshop_user} -DworkshopAction=setup -DlastSetupStepDone=${appd_wrkshp_last_setupstep_done} -DshowWorkshopBanner=false -jar /opt/appdynamics/appd_lab_repo/scripts/AD-Workshop-Utils.jar
 
 fi
 # !!!!!!! END BIG IF BLOCK !!!!!!!
